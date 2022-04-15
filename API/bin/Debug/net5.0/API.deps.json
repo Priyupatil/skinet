@@ -1821,6 +1821,9 @@
         }
       },
       "Core/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.10"
+        },
         "runtime": {
           "Core.dll": {}
         },
@@ -1831,6 +1834,7 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.10",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.1",
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.0"
         },
