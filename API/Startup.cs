@@ -18,6 +18,9 @@ using Infrastructure.Data;
 using Core.Interfaces;
 using AutoMapper;
 using API.Helpers;
+using API.Middleware;
+using API.Errrors;
+using API.Extensions;
 
 namespace API
 {
@@ -37,33 +40,33 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IProductRepository,ProductRepository>();
-            services.AddScoped(typeof(IGenericRepository<>),(typeof(GenericRepository<>)));
+           
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(options => 
             options.UseNpgsql(_config.GetConnectionString("DefaultConnection")));
+            services.AddApplicationServices();
+            services.AddSwaggerDocumentation();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
-            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPIv5 v1"));
-            }
+            //if (env.IsDevelopment()){}
+            
+                app.UseMiddleware<ExceptionMiddleware>();
+                //app.UseDeveloperExceptionPage();
+               
+            
+            app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseSwaggerDocumentation();
 
             app.UseAuthorization();
 
