@@ -47,6 +47,13 @@ namespace API
             options.UseNpgsql(_config.GetConnectionString("DefaultConnection")));
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
+            services.AddCors(opt => 
+            {
+              opt.AddPolicy("CorsPolicy",policy => 
+              {
+                  policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+              });
+            });
 
             
         }
@@ -69,6 +76,7 @@ namespace API
             app.UseSwaggerDocumentation();
 
             app.UseAuthorization();
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {
