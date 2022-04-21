@@ -144,3 +144,8 @@ D:\Skinet\skinet-master\API\obj\Debug\net5.0\API.dll
 D:\Skinet\skinet-master\API\obj\Debug\net5.0\ref\API.dll
 D:\Skinet\skinet-master\API\obj\Debug\net5.0\API.pdb
 D:\Skinet\skinet-master\API\obj\Debug\net5.0\API.genruntimeconfig.cache
+D:\Skinet\skinet-master\api\bin\Debug\net5.0\Pipelines.Sockets.Unofficial.dll
+D:\Skinet\skinet-master\api\bin\Debug\net5.0\StackExchange.Redis.dll
+D:\Skinet\skinet-master\api\bin\Debug\net5.0\System.Diagnostics.PerformanceCounter.dll
+D:\Skinet\skinet-master\api\bin\Debug\net5.0\System.IO.Pipelines.dll
+D:\Skinet\skinet-master\api\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll

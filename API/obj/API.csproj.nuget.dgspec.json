@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Skinet\\skinet-master\\api\\API.csproj": {}
+    "D:\\Skinet\\skinet-master\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\Skinet\\skinet-master\\api\\API.csproj": {
+    "D:\\Skinet\\skinet-master\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Skinet\\skinet-master\\api\\API.csproj",
+        "projectUniqueName": "D:\\Skinet\\skinet-master\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Skinet\\skinet-master\\api\\API.csproj",
+        "projectPath": "D:\\Skinet\\skinet-master\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Priyan104128\\.nuget\\packages\\",
-        "outputPath": "D:\\Skinet\\skinet-master\\api\\obj\\",
+        "outputPath": "D:\\Skinet\\skinet-master\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Priyan104128\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -222,6 +222,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
               "target": "Package",
               "version": "[1.1.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.5.61, )"
             }
           },
           "imports": [
