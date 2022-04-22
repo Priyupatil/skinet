@@ -82,9 +82,9 @@ namespace API
             app.UseRouting();
             app.UseStaticFiles();
             app.UseSwaggerDocumentation();
-
-            app.UseAuthorization();
             app.UseCors("CorsPolicy");
+            app.UseAuthorization();
+           
 
             app.UseEndpoints(endpoints =>
             {
